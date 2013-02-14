@@ -119,23 +119,38 @@
 <entryRule matchesQuery="@personal" contentCharacterStyleID="personal" />
 <entryRule matchesQuery="@private" contentCharacterStyleID="personal" />
 <entryRule matchesQuery="@prive" contentCharacterStyleID="personal" />
-<entryRule matchesQuery="@someday" contentCharacterStyleID="personal" />
+<entryRule matchesQuery="@today" contentCharacterStyleID="personal" />
 
-<!-- @business style. This section defines the styles that are applied to lines tagged with @business. -->
+<!-- @someday -->
+<color id="someday" red="0.89" green="0.75" blue="0.4" alpha="1.0" />
+<characterStyle id="someday" foregroundColorID="someday" />
+<entryRule matchesQuery="@someday" contentCharacterStyleID="someday" />
+<entryRule matchesQuery="@tomorrow" contentCharacterStyleID="someday" />
+
+<!-- @upcoming/@business style. This section defines the styles that are applied to lines tagged with @business. -->
 <color id="business" red="0.51" green="0.72" blue="0.25" alpha="1.0" />
 <characterStyle id="business" foregroundColorID="business" />
 <entryRule matchesQuery="@business" contentCharacterStyleID="business" />
 <entryRule matchesQuery="@wrep" contentCharacterStyleID="business" />
 <entryRule matchesQuery="@next" contentCharacterStyleID="business" />
+<entryRule matchesQuery="@upcoming" contentCharacterStyleID="business" />
 		
-<!-- @prio style. This section defines the styles that are applied to lines tagged with @prio. -->
+<!-- @overdue/@prio style. This section defines the styles that are applied to lines tagged with @prio. -->
 <color id="prio" red="0.82" green="0" blue="0.25" alpha="1.0" />
 <characterStyle id="prio" foregroundColorID="prio" />
 <entryRule matchesQuery="@prio" contentCharacterStyleID="prio" />
 <entryRule matchesQuery="@priority" contentCharacterStyleID="prio" />
-<entryRule matchesQuery="@today" contentCharacterStyleID="prio" />
+<entryRule matchesQuery="@overdue" contentCharacterStyleID="prio" />
 <entryRule matchesQuery="@now" contentCharacterStyleID="prio" />
 <entryRule matchesQuery="@urgent" contentCharacterStyleID="prio" />
+
+ <!-- @error/@blocked -->
+<color id="blockedstart" red="0.8" green="0.2" blue="0.2" alpha=".75" />
+<color id="blockedend" red=".6" green=".2" blue=".2" alpha="0.55" />
+<gradient id="blocked" startColorID="blockedstart" endColorID="blockedend" angle="90" />
+<backgroundStyle id="blocked" extendsBackgroundStyleID="base" fillGradientID="blocked" shadowID="NULL" />
+<entryRule matchesQuery="@blocked" contentCharacterStyleID="blocked" backParagraphBackgroundStyleID="blocked" />
+<entryRule matchesQuery="@error" contentCharacterStyleID="blocked" backParagraphBackgroundStyleID="blocked" />
 
 <!-- @done style. This section defines the styles that are applied to lines tagged with @done. -->
 <color id="done" red="0.45" green="0.45" blue="0.45" alpha="1.0" />
